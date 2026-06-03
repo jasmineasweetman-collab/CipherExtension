@@ -1,0 +1,21 @@
+{
+    "manifest_version":3,
+    "name":"Cipher Extension",
+    "version":"1.0",
+    "description":"Encrypt and decrypt text using historical ciphers.",
+    "action":
+    {
+        "default_popup":"popup.html",
+        "default_title":"Cipher Extension"
+    },
+    "content_scripts":
+    [
+        {
+            "matches":["<all_urls>"],
+            "js":["content.js"]
+        }
+    ],
+    "permissions":["activeTab","scripting","storage"],
+    "content_security_policy":
+    {"extension_pages":"script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"}
+}
