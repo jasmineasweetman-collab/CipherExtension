@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function()
     const decryptBtn=document.getElementById("decryptBtn");
     const output=document.getElementById("output");
     const input=document.getElementById("input");
-    const clearTextBtn=document.getElementById("clearTextBtn");
+    const clearInputBtn=document.getElementById("clearInputBtn");
+    const clearResultBtn=document.getElementById("clearResultBtn");
     const resetKeysBtn=document.getElementById("resetKeysBtn");
     const copyIcon=document.getElementById("copyIcon");
     const browserAPI=(typeof browser!=="undefined")?browser:chrome;
@@ -81,11 +82,10 @@ document.addEventListener("DOMContentLoaded", function()
     {
         encryptBtn.addEventListener("click",function(){runCipher("encrypt");});
         decryptBtn.addEventListener("click",function(){runCipher("decrypt");});
-        clearTextBtn.addEventListener("click",function()
-        {
-            input.value="";
-            output.value="";
-        });
+        clearInputBtn.addEventListener("click",function()
+        {input.value="";});
+        clearResultBtn.addEventListener("click",function()
+        {output.value="";});
         resetKeysBtn.addEventListener("click",function()
         {
             document.getElementById("caesarShift").value="3";
